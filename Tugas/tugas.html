@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengelola Array</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="mb-4">Tugas Mengelola Array</h2>
+
+        <!-- Tugas 1 -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Tugas 1: Mengurutkan Array</h5>
+                <p>Data Angka: <code>const angka = [20, 10, 3, 30, 58, 42, 6, 9]</code></p>
+                <p>Data Huruf: <code>const huruf = ['z', 'a', 'c', 'g', 'p']</code></p>
+                <button class="btn btn-primary" onclick="task1()">Lihat Hasil</button>
+                <div class="output" id="task1-output"></div>
+            </div>
+        </div>
+
+        <!-- Tugas 2 -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Tugas 2: Memfilter Angka Genap</h5>
+                <p>Data Angka: <code>const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+                <button class="btn btn-primary" onclick="task2()">Lihat Hasil</button>
+                <div class="output" id="task2-output"></div>
+            </div>
+        </div>
+
+        <!-- Tugas 3 -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Tugas 3: Menghasilkan Array Boolean</h5>
+                <p>Data Angka: <code>const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+                <button class="btn btn-primary" onclick="task3()">Lihat Hasil</button>
+                <div class="output" id="task3-output"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Tugas 1: Mengurutkan Array
+        function task1() {
+            const angka = [20, 10, 3, 30, 58, 42, 6, 9];
+            const huruf = ['z', 'a', 'c', 'g', 'p'];
+
+            // Urutkan angka dari terkecil ke terbesar
+            const sortedAngka = angka.sort((a, b) => a - b);
+
+            // Urutkan huruf berdasarkan urutan abjad
+            const sortedHuruf = huruf.sort();
+
+            document.getElementById('task1-output').innerHTML = `
+                <strong>Hasil Urutan Angka:</strong> ${sortedAngka} <br>
+                <strong>Hasil Urutan Huruf:</strong> ${sortedHuruf}
+            `;
+        }
+
+        // Tugas 2: Memfilter Angka Genap
+        function task2() {
+            const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const evenNumbers = angka.filter(num => num % 2 === 0);
+
+            document.getElementById('task2-output').innerHTML = `
+                <strong>Angka Genap:</strong> ${evenNumbers}
+            `;
+        }
+
+        // Tugas 3: Menghasilkan Array Boolean
+        function task3() {
+            const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const booleanArray = angka.map(num => num % 2 === 0);
+
+            document.getElementById('task3-output').innerHTML = `
+                <strong>Array Boolean (Genap?):</strong> ${booleanArray}
+            `;
+        }
+    </script>
+
+</body>
+</html>
